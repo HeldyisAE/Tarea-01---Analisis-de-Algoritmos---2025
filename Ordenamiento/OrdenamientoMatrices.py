@@ -17,3 +17,4 @@ def ordenarMatriz(matriz):
     return matriz 
 
 ordenarMatriz([[1,2,3],[1,4,2],[6,9,5]])
+
