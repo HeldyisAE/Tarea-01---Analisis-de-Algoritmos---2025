@@ -16,5 +16,26 @@ def ordenarMatriz(matriz):
         matriz[lista] = quicksort(matriz[lista]) 
     return matriz 
 
-ordenarMatriz([[1,2,3],[1,4,2],[6,9,5]])
+#ordenarMatriz([[1,2,3],[1,4,2],[6,9,5]])
+
+
+"""
+Se solicita la implementación de un algoritmo de distinto del anterior para 
+realizar una comparación y analisis del rendimiento de los mismos
+"""
+
+#Algoritmo bubblesort de comparación
+def bubblesort(lista):
+    ultimo = len(lista) #Denota el final de la lista
+    for i in range(ultimo):
+        for j in range(ultimo - i - 1):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j] 
+    return lista     
+
+def comparacionOrdenamiento(matriz):
+    #Se reutiliza de la función anterior
+    for lista in range(len(matriz)): #Itera sobre las listas y da el indice para sobreescribir
+        matriz[lista] = bubblesort(matriz[lista]) 
+    return matriz 
 
