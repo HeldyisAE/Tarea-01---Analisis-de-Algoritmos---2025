@@ -19,7 +19,7 @@ def ordenarMatriz(matriz):
 #ordenarMatriz([[1,2,3],[1,4,2],[6,9,5]])
 
 """
-Se solicita la implementación de un algoritmo de distinto del anterior para 
+Se solicita la implementación de un algoritmo de ordenamiento distinto del anterior para 
 realizar una comparación y analisis del rendimiento de los mismos
 """
 
