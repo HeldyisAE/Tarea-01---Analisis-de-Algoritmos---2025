@@ -36,6 +36,6 @@ def comparacionOrdenamiento(matriz):
     #Se reutiliza de la función anterior
     for lista in range(len(matriz)): #Itera sobre las listas y da el indice para sobreescribir
         matriz[lista] = bubblesort(matriz[lista]) 
-    return matriz 
 
-#comparacionOrdenamiento([[1,4,2,7,2,10]])
+    return matriz 
+#comparacionOrdenamiento([[3, 1, 5, 2, 4], [9, 6, 8, 5, 7], [12, 10, 15, 11, 14], [20, 18, 19, 17, 16], [25, 22, 21, 24, 23]])
