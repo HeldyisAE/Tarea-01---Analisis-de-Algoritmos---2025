@@ -32,8 +32,8 @@ def probarOrdenamiento():
             memoria = tracemalloc.get_traced_memory()[1] #Linea hecha con IA
             tracemalloc.stop()
 
-            print(f"Para {algoritmo.__name__} con {n} elementos por fila: {final - inicio:.4f} s, {memoria/1024:.2f} KB")
-            print(f"\n {temporal}")
+            print(f"\nPara {algoritmo.__name__} con {n} elementos por fila: {final - inicio:.4f} s, {memoria/1024:.2f} KB\n")
+            print(f"{temporal}\n")
 
 def probarBusqueda(valor):
     tamaños = [10, 100, 500]
@@ -48,7 +48,7 @@ def probarBusqueda(valor):
             memoria = tracemalloc.get_traced_memory()[1]
             tracemalloc.stop()
 
-            print(f"Para {algoritmo.__name__} en {n}x{n}: {fin - inicio:.6f} s, {memoria/1024:.2f} KB, ¿Existe?={encontrado}")
+            print(f"Para {algoritmo.__name__} en {n}x{n}: {fin - inicio:.6f} s, {memoria/1024:.2f} KB, ¿Existe?={encontrado}\n")
 
 if __name__ == "__main__":
 
