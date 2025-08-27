@@ -7,10 +7,20 @@ Se debe buscar un valor en las listas dentro de la lista de manera independiente
 
 #Algoritmo de búsqueda binaria para las listas
 def busquedaBinaria(lista, valor):
+    encontrado = False
+    if not lista:
+        return encontrado
     
-    found = True
-    
-    return found
+    largo = len(lista)
+    mitad = largo // 2
+
+    if lista[mitad] == valor:
+        encontrado = True
+        return encontrado
+    elif valor < lista[mitad]:
+        return busquedaBinaria(lista[:mitad], valor)
+    else:
+        return busquedaBinaria(lista[mitad+1:], valor)
 
 #Algoritmo principal de iteración sobre cada lista de la matrizl
 def busquedaMatriz(matriz, valor):
@@ -19,11 +29,14 @@ def busquedaMatriz(matriz, valor):
         if busquedaBinaria(lista, valor):
             resultado = True
             break
-    
     return resultado
 
-#busquedaMatriz([[1,2,3],[1,4,2],[6,9,5]], 4)
+"""
+Sentencias de ejecución, eliminar '#' para utilizar
+"""
 
+#resultado = busquedaMatriz([[1,2,3],[1,4,2],[6,9,5]], 4)
+#print(resultado)
 
 
 """
@@ -39,7 +52,12 @@ def busquedaLineal(matriz, valor):
         for j in i:
             if j == valor:
                 encontrado = True
-    print(encontrado)
+    
     return encontrado
 
-busquedaLineal([[1, "a", "sol", 9, "x"], ["gato", 15, "m", "python", 3], ["casa", "r", 7, "luz", "d"], ["f", 22, "t", "j", "libro"], [8, "v", "w", "amigo", "paz"]], 1)
+"""
+Sentencias de ejecución, eliminar '#' para utilizar
+"""
+
+#encontrado = busquedaLineal([[1, "a", "sol", 9, "x"], ["gato", 15, "m", "python", 3], ["casa", "r", 7, "luz", "d"], ["f", 22, "t", "j", "libro"], [8, "v", "w", "amigo", "paz"]], 105)
+#print(encontrado)
