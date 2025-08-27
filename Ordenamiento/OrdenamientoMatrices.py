@@ -16,12 +16,17 @@ def quicksort(lista):
     return quicksort(izq) + mid + quicksort(der)
 
 #Función principal para iterar sobre cada lista en la matriz
-def ordenarMatriz(matriz):
+def ejecutarQuicksort(matriz):
     for lista in range(len(matriz)): #Itera sobre las listas y da el indice para sobreescribir
         matriz[lista] = quicksort(matriz[lista]) 
     return matriz 
 
-#ordenarMatriz([[1,2,3],[1,4,2],[6,9,5]])
+"""
+Sentencias de ejecución, eliminar '#' para utilizar
+"""
+
+#QSOrdenada = ejecutarQuicksort([[1,2,3],[1,4,2],[6,9,5]])
+#print(QSOrdenada)
 
 """
 Se solicita la implementación de un algoritmo de ordenamiento distinto del anterior para 
@@ -37,10 +42,16 @@ def bubblesort(lista):
                 lista[j], lista[j+1] = lista[j+1], lista[j] 
     return lista     
 
-def comparacionOrdenamiento(matriz):
+def ejecutarBubblesort(matriz):
     #Se reutiliza de la función anterior
     for lista in range(len(matriz)): #Itera sobre las listas y da el indice para sobreescribir
         matriz[lista] = bubblesort(matriz[lista]) 
 
     return matriz 
-#comparacionOrdenamiento([[3, 1, 5, 2, 4], [9, 6, 8, 5, 7], [12, 10, 15, 11, 14], [20, 18, 19, 17, 16], [25, 22, 21, 24, 23]])
+
+"""
+Sentencias de ejecución, eliminar '#' para utilizar
+"""
+
+#BSOrdenada = ejecutarBubblesort([[3, 1, 5, 2, 4], [9, 6, 8, 5, 7], [12, 10, 15, 11, 14], [20, 18, 19, 17, 16], [25, 22, 21, 24, 23]])
+#print(BSOrdenada)
