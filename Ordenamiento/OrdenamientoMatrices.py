@@ -7,8 +7,13 @@ de manera que cada lista dentro de la matriz esté ordenada.
 
 #Algoritmo quicksort para las listas
 def quicksort(lista):
-    
-    return
+    if len(lista) <= 1:
+        return lista
+    piv = lista[len(lista)//2] #seleccion de la mitad
+    izq = [x for x in lista if x < piv] #elementos menores a piv
+    mid = [x for x in lista if x == piv] #iguales a piv
+    der = [x for x in lista if x > piv] #mayores a piv
+    return quicksort(izq) + mid + quicksort(der)
 
 #Función principal para iterar sobre cada lista en la matriz
 def ordenarMatriz(matriz):
