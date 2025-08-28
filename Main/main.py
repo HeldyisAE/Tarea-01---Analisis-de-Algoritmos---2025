@@ -15,14 +15,20 @@ import tracemalloc
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from Búsqueda.BusquedaMatrices import busquedaLineal, busquedaMatriz
-from Ordenamiento.OrdenamientoMatrices import quicksort, bubblesort
+from Ordenamiento.OrdenamientoMatrices import quicksort, mergesort
 from CrearMatriz.matrizRandom import crearM
 
+"""
+Para estas pruebas no se está imprimiendo la matriz generada debido al tamaño de 
+las mismas, pero se pueden generar matrices más pequeñas y verificar el funcionamiento
+de los algoritmos en el archivo de cada uno de ellos
+"""
+
 def probarOrdenamiento():
-    tamaños = [100, 1000, 10000]
+    tamaños = [100, 1000, 10000, 100000]
     for n in tamaños:
         matriz = crearM(n)
-        for algoritmo in [bubblesort, quicksort]:
+        for algoritmo in [quicksort, mergesort]:
             temporal = [fila[:] for fila in matriz] #Linea hecha IA
             tracemalloc.start()
             inicio = time.time()
@@ -33,7 +39,7 @@ def probarOrdenamiento():
             tracemalloc.stop()
 
             print(f"\nPara {algoritmo.__name__} con {n} elementos por fila: {final - inicio:.4f} s, {memoria/1024:.2f} KB\n")
-            print(f"{temporal}\n")
+
 
 def probarBusqueda(valor):
     tamaños = [10, 100, 500]
